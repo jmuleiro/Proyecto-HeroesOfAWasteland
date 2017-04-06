@@ -1,0 +1,28 @@
+<table>
+<tr> 
+<th>Nombre</th>
+<th>Precio</th>
+<th>Indie</th>
+<th>Jugadores</th>
+<th>PEGI</th>
+<th>Gráficos</th>
+<th>Reviews positivas</th>
+<th>Género principal</th>
+<th>Jugadores totales</th>
+<th>Pico diario</th>
+<th>Característica inspiracional</th></tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</table>
