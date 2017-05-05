@@ -1,0 +1,24 @@
+public IEnumerator Knockback(float knockDur, float knockPwr, Vector3 knockbackDir)
+    {
+        float timer = 0;
+        while (knockDur > timer)
+        {
+            timer += Time.deltaTime;
+            rb2d.AddForce(new Vector3(knockbackDir.x * -100, knockbackDir.y * knockPwr, transform.position.z));
+        }
+        yield return 0;
+    }
+    public void Damage(int dmg)
+    {
+        if ((curHealth -= dmg) <= 0)
+        {
+            curHealth = 0;
+        }
+        else {
+            curHealth -= dmg;
+            gameObject.GetComponent<Animation>().Play("nombre");
+        }
+        
+    }
+    // esto que sigue va en killPlayer.cs en el OnTriggerEnter2D void
+    StartCoroutine(player.Knockback(0.02f, 350, player.transform.position));
