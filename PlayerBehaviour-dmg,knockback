@@ -22,3 +22,4 @@ public IEnumerator Knockback(float knockDur, float knockPwr, Vector3 knockbackDi
     }
     // esto que sigue va en killPlayer.cs en el OnTriggerEnter2D void
     StartCoroutine(player.Knockback(0.02f, 350, player.transform.position));
+   killPlayer.cs -> PUBLIC bool invincible = false;
