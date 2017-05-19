@@ -2,11 +2,14 @@
 using System.Collections;
 
 public class GameManager : MonoBehaviour {
-    public BoardManager boardScript;
+    public BoardManager boardScript = new BoardManager();
 
-
+    
+    void Update()
+    {
+        
+    }
     private int level = 3;
-
     void Awake()
     {
         boardScript = GetComponent<BoardManager>();
@@ -14,15 +17,9 @@ public class GameManager : MonoBehaviour {
     }
     void InitGame()
     {
-        
+        boardScript.CountProperty.SetupScene(level);
     }
 
-
-	void Start () {
 	
-	}
 	
-	void Update () {
-	
-	}
 }

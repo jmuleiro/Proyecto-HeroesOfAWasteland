@@ -87,8 +87,11 @@ public class BoardManager : MonoBehaviour {
             int enemyCount = (int)Mathf.Log(level, 2f);
             LayoutObjectAtRandom(enemyTiles, enemyCount, enemyCount);
             Instantiate(exit, new Vector3(columns - 1, rows - 1, 0F), Quaternion.identity); 
-
+        }
+        public void llamar(int level) {
+            SetupScene(level);
         }
     }
-	
+
+    public Count CountProperty { get; set; }
 }
