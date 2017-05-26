@@ -1,0 +1,56 @@
+void SpawnFloor(GameObject[] walls, int minimum, int maximum)
+        {
+            
+            for (int i = 0; i <= gridPositions.Count; i++)
+            {
+                int randomNum = Random.Range(0, 2);
+                if (posicionesOcupadas[i-1] != null)
+                {
+                    
+                    if (i == 0)
+                    {
+                        Vector3 randomPos = RandomWall();
+                        GameObject tileChoice = walls[Random.Range(0, walls.Length)];
+                        Instantiate(tileChoice, randomPos, Quaternion.identity);
+                        posicionesOcupadas[contador] = randomPos;
+                        contador++;
+                    }
+                    else
+                    {
+                        Vector3 randomPos = RandomWall();
+                        for (int x = 0; x < posicionesOcupadas.Length; x++)
+                        {
+                            int validar = 0;
+                            if (randomPos != posicionesOcupadas[i] && validar==0)
+                            {
+                                if (randomNum == 1)
+                                {
+                                    GameObject tileChoice = walls[Random.Range(0, walls.Length)];
+                                    Instantiate(tileChoice, randomPos, Quaternion.identity);
+                                }
+                            }
+                        }
+                    }
+                }
+                else
+                {
+                    if (i == 0)
+                    {
+                        Vector3 randomPos = RandomWall();
+                        GameObject tileChoice = walls[Random.Range(0, walls.Length)];
+                        Instantiate(tileChoice, randomPos, Quaternion.identity);
+                        posicionesOcupadas[contador] = randomPos;
+                        contador++;
+                    }
+                }                
+            }
+        }
+        Vector3 RandomWall()
+        {
+            
+            int randomIndex = Random.Range(0, gridPositions.Count);
+            Vector3 randomPosition = gridPositions[randomIndex];
+            return randomPosition;
+            
+
+        }
